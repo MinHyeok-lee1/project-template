@@ -1,0 +1,201 @@
+{
+  // 기본 UI/터미널 세팅
+  "window.commandCenter": true,
+  "workbench.colorTheme": "Cursor Dark Midnight",
+  "workbench.iconTheme": "material-icon-theme",
+
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.2,
+
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorWidth": 1,
+
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.rightClickBehavior": "copyPaste",
+
+  // === 언어별 확장 적용 ===
+
+  // 웹/스크립트 계열 → Prettier
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // C / C++ 계열 → clang-format 확장 사용
+  "[c]": { "editor.defaultFormatter": "xaver.clang-format" },
+  "[cpp]": { "editor.defaultFormatter": "xaver.clang-format" },
+  "[h]": { "editor.defaultFormatter": "xaver.clang-format" },
+  "[hpp]": { "editor.defaultFormatter": "xaver.clang-format" },
+
+  // ESLint → JS/TS 코드 린팅 강화
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "yaml"
+  ],
+
+  // 포맷 자동 실행
+  "editor.formatOnSave": true,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "cSpell.enabledFileTypes": {
+    "c": true,
+    "cpp": true,
+    "h": true,
+    "hpp": true,
+
+    "*": false,
+    "ts": false,
+    "jsx": false,
+    "tsx": false,
+    "json": false,
+    "yaml": false,
+    "markdown": false,
+    "md": false,
+    "clang-format": false
+  },
+
+  // === Commit Message Editor 템플릿 ===
+  // Options 1
+  // "commit-message-editor.dynamicTemplate": [
+  //   "{type}({scope}): {emogi} {description}",
+  //   "",
+  //   "{body}",
+  //   "",
+  //   "{breaking_change}{footer}"
+  // ],
+
+  // Options 2
+  "commit-message-editor.dynamicTemplate": [
+    "{emogi} {type}({scope}): {description}",
+    "",
+    "{body}",
+    "",
+    "{breaking_change}{footer}"
+  ],
+  "commit-message-editor.tokens": [
+    {
+      "label": "Type",
+      "name": "type",
+      "type": "enum",
+      "options": [
+        { "label": "init", "description": "프로젝트 초기 커밋" },
+        { "label": "feat", "description": "새로운 기능 추가" },
+        { "label": "fix", "description": "버그 수정" },
+        { "label": "docs", "description": "문서 변경" },
+        {
+          "label": "style",
+          "description": "코드 스타일 변경 (기능 변화 없음)"
+        },
+        { "label": "refactor", "description": "리팩토링 (기능 변화 없음)" },
+        { "label": "perf", "description": "성능 개선" },
+        { "label": "test", "description": "테스트 추가/수정" },
+        { "label": "build", "description": "빌드 관련" },
+        { "label": "ci", "description": "CI/CD 설정 변경" },
+        { "label": "chore", "description": "자잘한 작업" },
+        { "label": "deps", "description": "의존성 업데이트" },
+        { "label": "revert", "description": "이전 커밋 되돌리기" },
+        { "label": "merge", "description": "브랜치 병합" },
+        { "label": "release", "description": "버전 릴리즈" },
+        { "label": "config", "description": "설정 변경" },
+        { "label": "security", "description": "보안 수정" },
+        { "label": "assets", "description": "이미지/리소스 추가" },
+        { "label": "db", "description": "데이터베이스 변경" },
+        { "label": "i18n", "description": "국제화/다국어" },
+        { "label": "ux", "description": "UX/UI 개선" },
+        { "label": "hotfix", "description": "긴급 수정" },
+        { "label": "logging", "description": "로그 관련" },
+        { "label": "cleanup", "description": "코드/파일 정리" }
+      ]
+    },
+    {
+      "label": "Emogi",
+      "name": "emogi",
+      "type": "enum",
+      "combobox": true,
+      "options": [
+        { "label": "🎉 init", "value": "🎉" },
+        { "label": "✨ feat", "value": "✨" },
+        { "label": "🐛 fix", "value": "🐛" },
+        { "label": "📝 docs", "value": "📝" },
+        { "label": "🎨 style", "value": "🎨" },
+        { "label": "♻️ refactor", "value": "♻️" },
+        { "label": "⚡️ perf", "value": "⚡️" },
+        { "label": "✅ test", "value": "✅" },
+        { "label": "📦 build", "value": "📦" },
+        { "label": "👷 ci", "value": "👷" },
+        { "label": "🔧 chore", "value": "🔧" },
+        { "label": "⬆️ deps", "value": "⬆️" },
+        { "label": "⏪ revert", "value": "⏪" },
+        { "label": "🔀 merge", "value": "🔀" },
+        { "label": "🏷️ release", "value": "🏷️" },
+        { "label": "⚙️ config", "value": "⚙️" },
+        { "label": "🔒 security", "value": "🔒" },
+        { "label": "🖼️ assets", "value": "🖼️" },
+        { "label": "🗄️ db", "value": "🗄️" },
+        { "label": "🌐 i18n", "value": "🌐" },
+        { "label": "💄 ux", "value": "💄" },
+        { "label": "🚑 hotfix", "value": "🚑" },
+        { "label": "🔊 logging", "value": "🔊" },
+        { "label": "🧹 cleanup", "value": "🧹" }
+      ]
+    },
+    {
+      "label": "Scope",
+      "name": "scope",
+      "placeholder": "범위(예: core, ui, api)",
+      "type": "text"
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "placeholder": "간단한 변경 요약 (예: 로그인 오류 수정)",
+      "type": "text"
+    },
+    {
+      "label": "Body",
+      "name": "body",
+      "placeholder": "자세한 변경 내용 (선택 사항)",
+      "type": "text",
+      "multiline": true
+    },
+    {
+      "label": "Breaking Changes",
+      "name": "breaking changes",
+      "placeholder": "호환성 깨지는 변경 사항 (선택)",
+      "type": "text"
+    },
+    {
+      "label": "Footer",
+      "name": "footer",
+      "placeholder": "작성자 or 이슈 참조 (예: Closes #123)",
+      "type": "text"
+    }
+  ],
+  "git.autofetch": true
+}

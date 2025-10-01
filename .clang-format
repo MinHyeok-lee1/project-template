@@ -1,3 +1,4 @@
+# Options 1
 BasedOnStyle: Google
 IndentWidth: 2
 TabWidth: 2
@@ -7,3 +8,23 @@ ColumnLimit: 100
 AllowShortFunctionsOnASingleLine: Inline
 DerivePointerAlignment: false
 PointerAlignment: Left
+# Options 2
+# BasedOnStyle: LLVM
+# IndentWidth: 4
+# TabWidth: 4
+# UseTab: Never
+
+# BreakBeforeBraces: Allman
+# AllowShortFunctionsOnASingleLine: Empty
+
+# IndentCaseLabels: true
+# AlignConsecutiveAssignments: true
+# AlignConsecutiveDeclarations: true
+# AlignTrailingComments: true
+
+# ColumnLimit: 100
+# PointerAlignment: Left
+# ReferenceAlignment: Left
+
+# NamespaceIndentation: All
+# SortIncludes: false

@@ -38,7 +38,7 @@ module.exports = {
         'cleanup',
       ],
     ],
-    // ✅ subject-case: 대문자/소문자 모두 허용
-    'subject-case': [0, 'never'],
+    'subject-case': [0, 'never'], // ✅ subject-case: 대문자/소문자 모두 허용
+    'body-max-line-length': [0, 'always'], // ✅ body 길이 제한 해제
   },
 };
