@@ -1,0 +1,11 @@
+name: "\U0001F41B Bug report"
+description: 버그 신고
+labels: [bug]
+body:
+  - type: textarea
+    id: repro
+    attributes: { label: 재현 절차, description: 코드/명령어/로그 포함 }
+    validations: { required: true }
+  - type: input
+    id: version
+    attributes: { label: 버전/커밋, placeholder: v0.1.0 or commit SHA }

@@ -1,0 +1,8 @@
+name: "\u2728 Feature request"
+description: 기능 제안
+labels: [enhancement]
+body:
+  - type: textarea
+    id: goal
+    attributes: { label: 목표/배경 }
+    validations: { required: true }
