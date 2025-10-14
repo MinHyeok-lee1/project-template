@@ -2,10 +2,13 @@
   "name": "dev-workspace",
   "private": true,
   "scripts": {
-    "lint": "eslint .",
-    "format": "prettier --write . && clang-format -i \"**/*.{c,cpp,h,hpp}\" || true",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "format": "prettier --write .",
     "check": "npm run lint && echo \"Clang-format will run on commit via lint-staged\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint:type": "eslint -c .eslintrc.typeaware.json . --ext .ts,.tsx"
   },
   "lint-staged": {
     "*.{js,ts,tsx,jsx,json,yml,yaml,md}": [

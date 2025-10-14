@@ -4,5 +4,5 @@
 
 ## Test Plan
 
-- [ ] lint & format passed
-- [ ] backward compatibility checked
+- [ ] npm run typecheck
+- [ ] npm run lint

@@ -1,4 +1,4 @@
-name: "\U0001F41B Bug report"
+name: '🐞 Bug report'
 description: 버그 신고
 labels: [bug]
 body:
