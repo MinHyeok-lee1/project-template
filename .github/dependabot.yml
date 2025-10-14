@@ -2,6 +2,35 @@ version: 2
 updates:
   - package-ecosystem: npm
     directory: '/'
-    schedule: { interval: weekly }
-    open-pull-requests-limit: 5
-    commit-message: { prefix: 'deps' }
+    schedule:
+      interval: weekly
+      day: monday
+      time: '08:30'
+      timezone: 'Asia/Seoul'
+    open-pull-requests-limit: 8
+    rebase-strategy: auto
+    target-branch: main
+    commit-message:
+      prefix: 'deps'
+      include: scope
+    labels: ['dependencies', 'automated']
+    groups:
+      eslint-and-tools:
+        patterns: ['eslint*', '@typescript-eslint/*', 'prettier', 'lint-*', 'eslint-*']
+      types-packages:
+        patterns: ['@types/*']
+      tooling:
+        patterns: ['vite*', 'webpack*', 'rollup*', 'ts-node', 'ts-jest']
+      runtime:
+        patterns: ['typescript', 'zx', 'cross-env', 'dotenv']
+  # 보안 업데이트는 별도 daily (필요 없으면 제거)
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: daily
+      time: '08:00'
+      timezone: 'Asia/Seoul'
+    allow:
+      - dependency-type: direct
+    labels: ['security', 'automated']
+    open-pull-requests-limit: 2
