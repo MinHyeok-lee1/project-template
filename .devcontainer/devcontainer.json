@@ -1,0 +1,10 @@
+{
+  "name": "node-20",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-20",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+    }
+  },
+  "postCreateCommand": "npm ci && npx husky install"
+}
