@@ -1,0 +1,10 @@
+---
+description: 'Commit/PR conventions'
+globs:
+  - '**/*'
+---
+
+# Commit & PR Conventions
+
+- Use Conventional Commits: feat/fix/chore/refactor/docs/test/build/ci.
+- In PR body include: Motivation, Approach, Test plan, Screenshots (if UI).

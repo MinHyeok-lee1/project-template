@@ -1,0 +1,14 @@
+---
+description: 'C/C++ formatting & headers'
+globs:
+  - '**/*.c'
+  - '**/*.cpp'
+  - '**/*.h'
+  - '**/*.hpp'
+---
+
+# C/C++ Rules
+
+- Run clang-format before commit.
+- Header guards or `#pragma once` consistently.
+- Keep functions short; extract reusable utilities.

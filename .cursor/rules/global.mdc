@@ -1,0 +1,12 @@
+---
+description: 'Global repo rules and guardrails'
+globs:
+  - '**/*'
+---
+
+# Global Rules
+
+- Follow repo tools: ESLint/Prettier/clang-format/.editorconfig.
+- Prefer incremental changes with clear diffs.
+- Always propose tests when adding logic; if skipped, explain why.
+- Keep code comments concise but useful (what/why, not obvious how).

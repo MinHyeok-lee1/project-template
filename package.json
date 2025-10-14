@@ -2,7 +2,10 @@
   "name": "dev-workspace",
   "private": true,
   "scripts": {
-    "prepare": "husky"
+    "lint": "eslint .",
+    "format": "prettier --write . && clang-format -i \"**/*.{c,cpp,h,hpp}\" || true",
+    "check": "npm run lint && echo \"Clang-format will run on commit via lint-staged\"",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,ts,tsx,jsx,json,yml,yaml,md}": [

@@ -1,0 +1,12 @@
+---
+description: 'TypeScript authoring standards'
+globs:
+  - '**/*.ts'
+  - '**/*.tsx'
+---
+
+# TypeScript Rules
+
+- Enable strict types; avoid `any` unless justified.
+- Public APIs: export types/interfaces; doc comment for params/returns.
+- Testing: create `*.test.ts` colocated with source or in `__tests__`.
